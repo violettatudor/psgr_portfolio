@@ -1,4 +1,169 @@
 <!DOCTYPE html>
 <html lang="ru">
-<!-- ... (Содержимое файла уже есть в textdoc, не нужно повторять здесь) -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Редакторский спецпроект — Истории, которые ты не забудешь</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #1a1a1a;
+    }
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+    header h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 18px;
+      color: #666;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .card {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .card h2 {
+      margin: 15px 0 10px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+    .card p {
+      font-size: 15px;
+      color: #555;
+    }
+    .story-page {
+      max-width: 960px;
+      margin: 80px auto;
+      padding: 0 20px;
+      display: none;
+    }
+    .story-page.active {
+      display: block;
+    }
+    .story-page h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .story-page .lead {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    .story-page img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    .story-page p {
+      font-size: 17px;
+      margin-bottom: 20px;
+      column-count: 2;
+      column-gap: 40px;
+    }
+    .back {
+      display: block;
+      text-align: center;
+      margin: 40px auto;
+      font-size: 16px;
+      color: #007aff;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Истории, которые ты не забудешь</h1>
+    <p>Мини-портфолио редактора. UGC-контент в формате ПСЖР</p>
+  </header>
+  <section class="grid">
+    <a class="card" onclick="showStory('story1')">
+      <img src="https://via.placeholder.com/720x400" alt="Бали">
+      <h2>Почему я сбежала с Бали через 3 дня</h2>
+      <p>Сначала казалось, что это рай. Но он оказался с пальмами и психозом.</p>
+    </a>
+    <a class="card" onclick="showStory('story2')">
+      <img src="https://via.placeholder.com/720x400" alt="Непал">
+      <h2>Свадьба лам в Непале</h2>
+      <p>Оказалось, монахам можно танцевать — и даже звать туристов на тост.</p>
+    </a>
+    <a class="card" onclick="showStory('story3')">
+      <img src="https://via.placeholder.com/720x400" alt="Стамбул">
+      <h2>Как я пошла за хлебом и оказалась в Стамбуле</h2>
+      <p>Это должна была быть скучная неделя. Но потом я купила билет в один конец.</p>
+    </a>
+    <a class="card" onclick="showStory('story4')">
+      <img src="https://via.placeholder.com/720x400" alt="Афины">
+      <h2>Моя худшая поездка — и почему я всё равно хочу вернуться</h2>
+      <p>Меня обокрали, я заболела, пропустила рейс. Но что-то в этом городе меня зацепило.</p>
+    </a>
+  </section>
+  <section id="story1" class="story-page">
+    <h2>Почему я сбежала с Бали через 3 дня</h2>
+    <p class="lead">Сначала казалось, что это рай. Но он оказался с пальмами и психозом.</p>
+    <img src="https://via.placeholder.com/720x400" alt="Фото из поездки">
+    <p>Я мечтала о Бали два года. Представляла утро с йогой и смузи, дневной серф и вечер под пальмами. А потом я приехала — и поняла, что вообще не туда попала. Пробки, жара, духота, толпы — всё бесило. Вместо умиротворения — паника. Я пыталась расслабиться, но каждый день становился только хуже. Апофеозом стала драка за лежак на пляже. На третий день я села в такси до аэропорта и улетела в Куала-Лумпур. Иногда рай — это просто место, где тебе спокойно. Бали им не стал.</p>
+    <span class="back" onclick="goBack()">← Назад ко всем историям</span>
+  </section>
+  <section id="story2" class="story-page">
+    <h2>Свадьба лам в Непале</h2>
+    <p class="lead">Оказалось, монахам можно танцевать — и даже звать туристов на тост.</p>
+    <img src="https://via.placeholder.com/720x400" alt="Фото из поездки">
+    <p>Я приехала в маленькое село под Катманду, чтобы поработать над проектом по архитектуре. Вечером местные позвали нас в монастырь — якобы будет церемония. Всё началось чинно: мантры, чай, костры. А потом кто-то из монахов достал колонку JBL, включил хип-хоп и пригласил всех в круг. Один из лам вручил мне бокал с манговым вином и сказал: «Танцуй. Будда бы хотел». Я танцевала с ламами до полуночи. Мир стал на какое-то время самым лёгким и открытым местом.</p>
+    <span class="back" onclick="goBack()">← Назад ко всем историям</span>
+  </section>
+  <section id="story3" class="story-page">
+    <h2>Как я пошла за хлебом и оказалась в Стамбуле</h2>
+    <p class="lead">Это должна была быть скучная неделя. Но потом я купила билет в один конец.</p>
+    <img src="https://via.placeholder.com/720x400" alt="Фото из поездки">
+    <p>Всё началось с того, что я забыла купить лимоны. А потом поймала акцию на Авиасейлс и оказалась в Стамбуле — без плана, но с лёгким сердцем. Я гуляла по Галате с кофе и бубликом, влюблялась в трамвайные звонки и запутанные переулки. В один из дней ко мне подошёл дедушка и сказал: «Ты выглядишь, как будто тебе надо к морю». Он был прав. Мы поехали вместе. Я не спросила его имени. Иногда лучший маршрут — это тот, которого ты не строил.</p>
+    <span class="back" onclick="goBack()">← Назад ко всем историям</span>
+  </section>
+  <section id="story4" class="story-page">
+    <h2>Моя худшая поездка — и почему я всё равно хочу вернуться</h2>
+    <p class="lead">Меня обокрали, я заболела, пропустила рейс. Но что-то в этом городе меня зацепило.</p>
+    <img src="https://via.placeholder.com/720x400" alt="Фото из поездки">
+    <p>Это была поездка в Афины. С самого начала всё шло не по плану: потеряли багаж, квартиру залило водой, я простудилась и провалялась с температурой. Но утром, когда я вышла в аптеку, меня встретила булочная с запахом корицы. Старик на углу дал апельсин и сказал: «Жизнь горькая, ешь сладкое». И вот в этот момент я почему-то расплакалась. Мне кажется, я нашла в этом городе не счастье, а правду. И это даже лучше.</p>
+    <span class="back" onclick="goBack()">← Назад ко всем историям</span>
+  </section>
+  <script>
+    function showStory(id) {
+      document.querySelector('.grid').style.display = 'none';
+      document.querySelectorAll('.story-page').forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    function goBack() {
+      document.querySelector('.grid').style.display = 'grid';
+      document.querySelectorAll('.story-page').forEach(p => p.classList.remove('active'));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
 </html>
