@@ -6,159 +6,54 @@
   <title>Редакторский спецпроект — Истории, которые ты не забудешь</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #ffffff;
-      color: #1a1a1a;
-    }
-    header {
-      text-align: center;
-      padding: 80px 20px 40px;
-    }
-    header h1 {
-      font-size: 42px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 18px;
-      color: #666;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    .card {
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-    }
-    .card:hover {
-      transform: scale(1.02);
-    }
-    .card img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-    .card h2 {
-      margin: 15px 0 10px;
-      font-size: 20px;
-      font-weight: 600;
-    }
-    .card p {
-      font-size: 15px;
-      color: #555;
-    }
-    .story-page {
-      max-width: 960px;
-      margin: 80px auto;
-      padding: 0 20px;
-      display: none;
-    }
-    .story-page.active {
-      display: block;
-    }
-    .story-page h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    .story-page .lead {
-      font-size: 18px;
-      color: #555;
-      margin-bottom: 30px;
-    }
-    .story-page img {
-      width: 100%;
-      border-radius: 10px;
-      margin: 20px 0;
-    }
-    .story-page p {
-      font-size: 17px;
-      margin-bottom: 20px;
-      column-count: 2;
-      column-gap: 40px;
-    }
-    .back {
-      display: block;
-      text-align: center;
-      margin: 40px auto;
-      font-size: 16px;
-      color: #007aff;
-      text-decoration: underline;
-      cursor: pointer;
-    }
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: #1a1a1a; }
+    header { text-align: center; padding: 80px 20px 40px; }
+    header h1 { font-size: 42px; font-weight: 700; margin-bottom: 10px; }
+    header p { font-size: 18px; color: #666; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 960px; margin: 0 auto; padding: 40px 20px; }
+    .card { cursor: pointer; transition: transform 0.3s ease; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+    .card:hover { transform: scale(1.02); }
+    .card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 10px; }
+    .card h2 { margin: 15px 0 10px; font-size: 20px; font-weight: 600; }
+    .card p { font-size: 15px; color: #555; }
+    .story-page { max-width: 960px; margin: 80px auto; padding: 0 20px; display: none; }
+    .story-page.active { display: block; }
+    .story-page h2 { font-size: 36px; margin-bottom: 10px; }
+    .story-page .lead { font-size: 18px; color: #555; margin-bottom: 30px; }
+    .story-page img { width: 100%; border-radius: 10px; margin: 20px 0; }
+    .story-page p { font-size: 17px; margin-bottom: 20px; column-count: 2; column-gap: 40px; }
+    .back { display: block; text-align: center; margin: 40px auto; font-size: 16px; color: #007aff; text-decoration: underline; cursor: pointer; }
     @media screen and (max-width: 700px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+      .grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Истории, которые ты не забудешь</h1>
-    <p>Мини-портфолио редактора. UGC-контент в формате ПСЖР</p>
+    <p>UGC-портфолио, собранное как редакторский спецпроект в духе ПСЖР</p>
   </header>
   <section class="grid">
     <a class="card" onclick="showStory('story1')">
-      <img src="https://via.placeholder.com/720x720" alt="Бали">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Бали">
       <h2>Почему я сбежала с Бали через 3 дня</h2>
       <p>Сначала казалось, что это рай. Но он оказался с пальмами и психозом.</p>
     </a>
     <a class="card" onclick="showStory('story2')">
-      <img src="https://via.placeholder.com/720x720" alt="Непал">
+      <img src="https://images.unsplash.com/photo-1603787213806-09bbdea3288b" alt="Непал">
       <h2>Свадьба лам в Непале</h2>
       <p>Оказалось, монахам можно танцевать — и даже звать туристов на тост.</p>
     </a>
     <a class="card" onclick="showStory('story3')">
-      <img src="https://via.placeholder.com/720x720" alt="Стамбул">
+      <img src="https://images.unsplash.com/photo-1588686430834-0895b11f17df" alt="Стамбул">
       <h2>Как я пошла за хлебом и оказалась в Стамбуле</h2>
       <p>Это должна была быть скучная неделя. Но потом я купила билет в один конец.</p>
     </a>
     <a class="card" onclick="showStory('story4')">
-      <img src="https://via.placeholder.com/720x720" alt="Афины">
+      <img src="https://images.unsplash.com/photo-1549893074-2b3c87c5fe20" alt="Афины">
       <h2>Моя худшая поездка — и почему я всё равно хочу вернуться</h2>
       <p>Меня обокрали, я заболела, пропустила рейс. Но что-то в этом городе меня зацепило.</p>
     </a>
-  </section>
-  <section id="story1" class="story-page">
-    <h2>Почему я сбежала с Бали через 3 дня</h2>
-    <p class="lead">Сначала казалось, что это рай. Но он оказался с пальмами и психозом.</p>
-    <img src="https://via.placeholder.com/720x400" alt="Фото из поездки">
-    <p>Я мечтала о Бали два года...</p>
-    <span class="back" onclick="goBack()">← Назад ко всем историям</span>
-  </section>
-  <section id="story2" class="story-page">
-    <h2>Свадьба лам в Непале</h2>
-    <p class="lead">Оказалось, монахам можно танцевать — и даже звать туристов на тост.</p>
-    <img src="https://via.placeholder.com/720x400" alt="Фото из поездки">
-    <p>Я приехала в маленькое село под Катманду...</p>
-    <span class="back" onclick="goBack()">← Назад ко всем историям</span>
-  </section>
-  <section id="story3" class="story-page">
-    <h2>Как я пошла за хлебом и оказалась в Стамбуле</h2>
-    <p class="lead">Это должна была быть скучная неделя. Но потом я купила билет в один конец.</p>
-    <img src="https://via.placeholder.com/720x400" alt="Фото из поездки">
-    <p>Всё началось с того, что я забыла купить лимоны...</p>
-    <span class="back" onclick="goBack()">← Назад ко всем историям</span>
-  </section>
-  <section id="story4" class="story-page">
-    <h2>Моя худшая поездка — и почему я всё равно хочу вернуться</h2>
-    <p class="lead">Меня обокрали, я заболела, пропустила рейс. Но что-то в этом городе меня зацепило.</p>
-    <img src="https://via.placeholder.com/720x400" alt="Фото из поездки">
-    <p>Это была поездка в Афины...</p>
-    <span class="back" onclick="goBack()">← Назад ко всем историям</span>
   </section>
   <script>
     function showStory(id) {
